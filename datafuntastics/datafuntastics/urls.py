@@ -20,10 +20,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('', include("librarium.urls")),  # Aplicacion principal
     path('graphify/', include("graphify.urls")),  # Incluir las URLs de graphify
-    path('librarium/', include("librarium.urls")),  # Incluir las URLs de librarium
     path('sheetmaker/', include("sheetmaker.urls")),  # Incluir las URLs de sheetmaker
+    path('admin/', admin.site.urls),
 ]
 
 # http://127.0.0.1:8000/graphify/download_png

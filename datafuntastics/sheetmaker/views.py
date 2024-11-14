@@ -10,6 +10,16 @@ from openpyxl import Workbook
 def  v_index(request):
     return HttpResponse("sheetmaker index")
 
+def  v_macros(request):
+    return render(request, "sheetmaker/macros.html")
+
+def  v_powerbi(request):
+    return render(request, "sheetmaker/powerbi.html")
+
+def  v_analitica(request):
+    return render(request, "sheetmaker/analitica.html")
+
+
 def v_reporte_xls(request):
     # Crear un libro de Excel
     workbook = Workbook()

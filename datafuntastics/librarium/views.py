@@ -5,6 +5,11 @@ from reportlab.pdfgen import canvas
 
 
 # Create your views here.
+
+
+def v_data_analitica(request):
+    return render(request, "librarium/data_frames")
+
 def v_index(request):
     return HttpResponse("librarium index")
 
