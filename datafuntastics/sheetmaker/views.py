@@ -5,19 +5,33 @@ from openpyxl import Workbook
 
 
 
-
+static_values = {
+    "direccion": "Las flores amarillas 343434 | Concepcion",
+    "telefono" : "+56 982020054",
+    "email" : "info@lafloresamarillas.cl",
+    "whatsapp" : "+56 982020054"
+}
 # Create your views here.
 def  v_index(request):
     return HttpResponse("sheetmaker index")
 
 def  v_macros(request):
-    return render(request, "sheetmaker/macros.html")
+    context = {
+        "static_values": static_values
+    }
+    return render(request, "sheetmaker/macros.html", context)
 
 def  v_powerbi(request):
-    return render(request, "sheetmaker/powerbi.html")
+    context = {
+        "static_values": static_values
+    }
+    return render(request, "sheetmaker/powerbi.html", context)
 
 def  v_analitica(request):
-    return render(request, "sheetmaker/analitica.html")
+    context = {
+        "static_values": static_values
+    }
+    return render(request, "sheetmaker/analitica.html", context)
 
 
 def v_reporte_xls(request):
